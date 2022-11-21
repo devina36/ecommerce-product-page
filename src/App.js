@@ -1,10 +1,12 @@
-import { Navbar } from './component';
+import { Main, Navbar } from './component';
+// import CarouselProduct from './component/CarouselProduct';
 
 const App = () => {
   return (
-    <div>
+    <>
       <Navbar />
-    </div>
+      <Main />
+    </>
   );
 };
 

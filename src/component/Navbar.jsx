@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import ButtonNav from './ButtonNav';
-import Logo from '../assets/images/logo.svg';
 import { BsCart3 } from 'react-icons/bs';
-import Profile from '../assets/images/image-avatar.png';
-import Menu from '../assets/images/icon-menu.svg';
-import Close from '../assets/images/icon-close.svg';
+import { Logo, Close, Profile, Menu } from '../assets/images';
 
 const Navbar = () => {
   const [cart, setCart] = useState(false);
@@ -12,15 +9,16 @@ const Navbar = () => {
 
   const handleCart = () => {
     setCart(!cart);
+    setMenu(false);
   };
 
   return (
     <nav className=" bg-white relative">
-      <div className="container mx-auto py-4">
+      <div className="container mx-auto py-4 md:py-0">
         <div className=" flex mx-2 md:mx-1 justify-between items-center pb-2 md:border-b-2">
           <div className="flex gap-4 md:gap-14 items-center">
             <label htmlFor="logo">
-              <a href="/" className="py-11">
+              <a href="/">
                 <img src={Logo} alt="logo" />
               </a>
             </label>
@@ -33,7 +31,15 @@ const Navbar = () => {
             </div>
             {/* button sidebar */}
             <div className=" md:hidden flex order-first md:order-none">
-              <img src={Menu} className="cursor-pointer" onClick={() => setMenu(true)} alt="menu" />
+              <img
+                src={Menu}
+                className="cursor-pointer"
+                onClick={() => {
+                  setMenu(true);
+                  setCart(false);
+                }}
+                alt="menu"
+              />
             </div>
           </div>
           <div className="flex gap-4 md:gap-12 items-center">
@@ -45,15 +51,6 @@ const Navbar = () => {
               />
               <div className=" absolute bg-oranges text-white -top-1 text-[9px] px-[7px] rounded-md z-10 -right-[5px]">
                 3
-              </div>
-              <div
-                className={`absolute w-[360px] h-[255px] rounded-md mt-8 ml-1 left-1/2 -translate-x-1/2 bg-white shadow-xl 
-              ${cart === false && `hidden`}`}
-              >
-                <h2 className=" font-semibold border-b-2 py-5 px-6">Cart</h2>
-                <div className=" flex justify-center items-center h-[175px]">
-                  <p className=" text-dark-grayish-blue font-bold">Your cart is empty</p>
-                </div>
               </div>
             </div>
             <div
@@ -80,6 +77,16 @@ const Navbar = () => {
           <ButtonNav text={'Women'} />
           <ButtonNav text={'About'} />
           <ButtonNav text={'Contact'} />
+        </div>
+      </div>
+      {/* cart */}
+      <div
+        className={`absolute w-[360px] h-[255px] rounded-lg top-24 z-20 ml-1 right-2 md:right-[90px] bg-white shadow-xl 
+              ${cart === false && `hidden`}`}
+      >
+        <h2 className=" font-semibold border-b-2 py-5 px-6">Cart</h2>
+        <div className=" flex justify-center items-center h-[175px]">
+          <p className=" text-dark-grayish-blue font-bold">Your cart is empty</p>
         </div>
       </div>
     </nav>

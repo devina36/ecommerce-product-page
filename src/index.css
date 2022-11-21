@@ -8,3 +8,16 @@ body {
   font-family: 'Kumbh Sans', sans-serif;
   box-sizing: border-box;
 }
+
+ul.slick-dots {
+  @apply relative grid grid-cols-4 gap-[30px] text-left w-full p-0 h-fit !important;
+}
+
+ul.slick-dots li {
+  @apply w-full relative h-full m-0 p-0 !important;
+}
+
+li.slick-active {
+  @apply after:bg-white after:bg-opacity-60 after:w-full after:h-full after:absolute after:z-20 after:top-0 
+  after:rounded-xl after:border-2 after:border-oranges;
+}
