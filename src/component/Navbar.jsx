@@ -47,7 +47,9 @@ const Navbar = () => {
               <BsCart3
                 size={23}
                 onClick={handleCart}
-                className={` ${cart ? `text-black` : `text-dark-grayish-blue`} hover:text-black cursor-pointer`}
+                className={` ${
+                  cart ? `text-very-dark-blue` : `text-dark-grayish-blue`
+                } hover:text-very-dark-blue cursor-pointer`}
               />
               <div className=" absolute bg-oranges text-white -top-1 text-[9px] px-[7px] rounded-md z-10 -right-[5px]">
                 3
@@ -66,7 +68,7 @@ const Navbar = () => {
 
       {/* sidebar mobile */}
       <div
-        className={`absolute top-0 w-4/6 py-6 px-6 bg-white shadow-lg animate-slide-in min-h-screen ${
+        className={`absolute top-0 w-4/6 py-6 px-6 z-50 bg-white shadow-lg animate-slide-in min-h-screen ${
           menu === false && `hidden`
         }`}
       >
@@ -81,7 +83,7 @@ const Navbar = () => {
       </div>
       {/* cart */}
       <div
-        className={`absolute w-[360px] h-[255px] rounded-lg top-24 z-20 ml-1 right-2 md:right-[90px] bg-white shadow-xl 
+        className={`absolute w-[360px] h-[255px] rounded-lg top-24 z-50 ml-1 right-2 md:right-[90px] bg-white shadow-xl 
               ${cart === false && `hidden`}`}
       >
         <h2 className=" font-semibold border-b-2 py-5 px-6">Cart</h2>
