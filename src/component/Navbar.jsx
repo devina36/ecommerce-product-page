@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ButtonNav from './ButtonNav';
 import { BsCart3 } from 'react-icons/bs';
+import { FaTrashAlt } from 'react-icons/fa';
 import { Logo, Close, Profile, Menu } from '../assets/images';
+import { Thumb1 } from '../assets/images';
 
 const Navbar = () => {
   const [cart, setCart] = useState(false);
@@ -13,6 +15,11 @@ const Navbar = () => {
     setMenu(false);
   };
 
+  const remove = () => {
+    localStorage.removeItem('data');
+    window.location.reload();
+  };
+
   useEffect(() => {
     const get = JSON.parse(localStorage.getItem('data')) || null;
     setData(get);
@@ -20,7 +27,7 @@ const Navbar = () => {
 
   return (
     <nav className=" bg-white relative">
-      <div className="container mx-auto py-4 md:py-0">
+      <div className="container relative mx-auto py-4 md:py-0">
         <div className=" flex mx-2 md:mx-1 justify-between items-center pb-2 md:border-b-2">
           <div className="flex gap-4 md:gap-14 items-center">
             <label htmlFor="logo">
@@ -89,13 +96,32 @@ const Navbar = () => {
       </div>
       {/* cart */}
       <div
-        className={`absolute w-[360px] h-[255px] rounded-lg top-24 z-50 ml-1 right-2 md:right-[90px] bg-white shadow-xl 
+        className={`fixed w-[360px] h-[255px] rounded-lg top-24 z-50 ml-1 right-2 md:right-[90px] bg-white shadow-xl 
               ${cart === false && `hidden`}`}
       >
-        <h2 className=" font-semibold border-b-2 py-5 px-6">Cart</h2>
-        <div className=" flex justify-center items-center h-[175px]">
-          <p className=" text-dark-grayish-blue font-bold">Your cart is empty</p>
-        </div>
+        <h2 className=" font-semibold border-b-2 py-5 mx-6">Cart</h2>
+        {data === null ? (
+          <div className=" flex justify-center items-center h-[175px]">
+            <p className=" text-dark-grayish-blue font-bold">Your cart is empty</p>
+          </div>
+        ) : (
+          <div className=" mx-6 my-6">
+            <div className="flex items-center justify-between">
+              <img src={Thumb1} alt="thumb" className=" w-[50px] h-[50px] rounded-lg" />
+              <div className=" flex flex-col">
+                <p className=" tracking-[0.0075em] text-dark-grayish-blue">Fall Limited Edition Sneakers</p>
+                <p className=" tracking-wide text-dark-grayish-blue">
+                  $125.00 x {data} &nbsp;
+                  <span className=" text-very-dark-blue font-bold tracking-wider">${125 * data}.00</span>
+                </p>
+              </div>
+              <button onClick={remove}>
+                <FaTrashAlt className=" text-grayish-blue hover:text-oranges" />
+              </button>
+            </div>
+            <button className="w-full py-4 bg-oranges mt-6 text-white font-bold rounded-lg">Checkout</button>
+          </div>
+        )}
       </div>
     </nav>
   );
