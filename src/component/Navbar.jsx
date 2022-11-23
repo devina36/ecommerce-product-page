@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ButtonNav from './ButtonNav';
 import { BsCart3 } from 'react-icons/bs';
 import { Logo, Close, Profile, Menu } from '../assets/images';
@@ -6,11 +6,17 @@ import { Logo, Close, Profile, Menu } from '../assets/images';
 const Navbar = () => {
   const [cart, setCart] = useState(false);
   const [menu, setMenu] = useState(false);
+  const [data, setData] = useState(null);
 
   const handleCart = () => {
     setCart(!cart);
     setMenu(false);
   };
+
+  useEffect(() => {
+    const get = JSON.parse(localStorage.getItem('data')) || null;
+    setData(get);
+  }, [data]);
 
   return (
     <nav className=" bg-white relative">
@@ -52,7 +58,7 @@ const Navbar = () => {
                 } hover:text-very-dark-blue cursor-pointer`}
               />
               <div className=" absolute bg-oranges text-white -top-1 text-[9px] px-[7px] rounded-md z-10 -right-[5px]">
-                3
+                {data}
               </div>
             </div>
             <div

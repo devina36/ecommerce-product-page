@@ -19,17 +19,11 @@ body {
 }
 
 ul.slick-dots {
-  @apply absolute text-left w-full p-0 m-0 -bottom-[33%] -translate-y-[33%] hidden md:block !important;
+  @apply static md:grid md:gap-[31.5px] md:grid-cols-4 mt-6 text-left w-full hidden !important;
 }
 
 ul.slick-dots li {
-  @apply w-1/5 box-border h-auto m-0 !important;
-}
-
-ul.slick-dots :nth-child(1),
-ul.slick-dots :nth-child(2),
-ul.slick-dots :nth-child(3) {
-  @apply mr-[6.5%] !important;
+  @apply w-full h-auto m-0 !important;
 }
 
 li.slick-active {
