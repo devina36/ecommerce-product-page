@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <nav className=" bg-white relative">
-      <div className="container relative mx-auto py-4 md:py-0">
+      <div className="container relative mx-auto py-4 md:py-6 lg:py-0">
         <div className=" flex mx-2 md:mx-1 justify-between items-center pb-2 md:border-b-2">
           <div className="flex gap-4 md:gap-14 items-center">
             <label htmlFor="logo">
@@ -35,7 +35,7 @@ const Navbar = () => {
                 <img src={Logo} alt="logo" />
               </a>
             </label>
-            <div className=" md:flex gap-8 hidden">
+            <div className=" lg:flex gap-8 hidden">
               <ButtonNav text={'Collections'} />
               <ButtonNav text={'Men'} />
               <ButtonNav text={'Women'} />
@@ -43,7 +43,7 @@ const Navbar = () => {
               <ButtonNav text={'Contact'} />
             </div>
             {/* button sidebar */}
-            <div className=" md:hidden flex order-first md:order-none">
+            <div className=" lg:hidden flex order-first lg:order-none">
               <img
                 src={Menu}
                 className="cursor-pointer"
@@ -81,7 +81,7 @@ const Navbar = () => {
 
       {/* sidebar mobile */}
       <div
-        className={`absolute top-0 w-4/6 py-6 px-6 z-50 bg-white shadow-lg animate-slide-in min-h-screen ${
+        className={`fixed top-0 w-4/6 max-w-[350px] py-6 px-6 z-50 bg-white shadow-lg animate-slide-in min-h-screen ${
           menu === false && `hidden`
         }`}
       >

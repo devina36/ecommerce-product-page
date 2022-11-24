@@ -4,29 +4,33 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import { Product1, Product2, Product3, Product4 } from '../assets/images';
 import { Modal } from '@mui/material';
+import ModalCarousel from './ModalCarousel';
+import { IoClose } from 'react-icons/io5';
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 
 function SampleNextArrow(props) {
   const { onClick } = props;
   return (
-    <div
-      className="before:content-[url('./assets/images/icon-next.svg')] before:absolute cursor-pointer before:scale-75
-      flex justify-center items-center before:p-0 before:-mb-1 shadow-sm hover:opacity-75 z-30 right-4 md:hidden
-      bg-white w-[40px] h-[40px] absolute rounded-full opacity-100 top-1/2 -translate-y-1/2"
+    <button
+      className=" cursor-pointer flex justify-center items-center z-30 shadow-sm right-4 bg-white w-10 h-10
+      absolute rounded-full opacity-100 top-1/2 -translate-y-1/2 md:hidden group"
       onClick={onClick}
-    />
+    >
+      <MdKeyboardArrowRight size={30} className="text-very-dark-blue group-hover:text-oranges" />
+    </button>
   );
 }
 
 function SamplePrevArrow(props) {
   const { onClick } = props;
   return (
-    <div
-      className="
-      before:content-[url('./assets/images/icon-previous.svg')] before:absolute cursor-pointer before:scale-75
-      flex justify-center items-center before:p-0 before:-mb-1 shadow-sm hover:opacity-75 z-30 left-4 md:hidden
-      bg-white w-[40px] h-[40px] absolute rounded-full opacity-100 top-1/2 -translate-y-1/2"
+    <button
+      className=" cursor-pointer flex justify-center items-center z-30 shadow-sm left-4 bg-white w-10 h-10
+      absolute rounded-full opacity-100 top-1/2 -translate-y-1/2 md:hidden group"
       onClick={onClick}
-    />
+    >
+      <MdKeyboardArrowLeft size={30} className="text-very-dark-blue group-hover:text-oranges" />
+    </button>
   );
 }
 
@@ -66,7 +70,7 @@ const CarouselProduct = () => {
   };
   return (
     <>
-      <Slider {...settings} className="w-full md:rounded-2xl">
+      <Slider {...settings} className="w-full md:rounded-2xl max-w-[450px]">
         <div>
           <span onClick={handleOpen} className="w-full overflow-hidden">
             <img src={Product1} className="object-cover w-full md:rounded-2xl h-[300px] md:h-auto" alt="product1" />
@@ -95,9 +99,13 @@ const CarouselProduct = () => {
         aria-describedby="modal-modal-description"
       >
         <div className="flex justify-center h-screen items-center">
-          <div className="w-1/5">
-            <button onClick={handleClose}>close</button>
-            coba
+          <div className="max-w-[550px] md:w-[55%] w-5/6 mb-5">
+            <div className="mb-5 flex justify-end">
+              <button onClick={handleClose} className="w-fit">
+                <IoClose fontSize={32} className="text-white font-bold -mr-1 hover:text-oranges" />
+              </button>
+            </div>
+            <ModalCarousel />
           </div>
         </div>
       </Modal>

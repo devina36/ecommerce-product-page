@@ -19,11 +19,11 @@ body {
 }
 
 ul.slick-dots {
-  @apply static md:grid md:gap-[31.5px] md:grid-cols-4 mt-6 text-left w-full hidden !important;
+  @apply static md:grid md:gap-[31.5px] md:grid-cols-4 mt-6 text-left w-full max-w-[450px] hidden mx-auto !important;
 }
 
 ul.slick-dots li {
-  @apply w-full h-auto m-0 !important;
+  @apply w-full max-w-[89px] h-auto m-0 !important;
 }
 
 li.slick-active {
