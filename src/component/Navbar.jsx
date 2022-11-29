@@ -30,11 +30,7 @@ const Navbar = () => {
       <div className="container relative mx-auto py-4 md:py-6 lg:py-0">
         <div className=" flex mx-2 md:mx-1 justify-between items-center pb-2 md:border-b-2">
           <div className="flex gap-4 md:gap-14 items-center">
-            <label htmlFor="logo">
-              <a href="/">
-                <img src={Logo} alt="logo" />
-              </a>
-            </label>
+            <img src={Logo} alt="logo" />
             <div className=" lg:flex gap-8 hidden">
               <ButtonNav text={'Collections'} />
               <ButtonNav text={'Men'} />
@@ -96,7 +92,7 @@ const Navbar = () => {
       </div>
       {/* cart */}
       <div
-        className={`fixed w-[360px] h-[255px] rounded-lg top-24 z-50 ml-1 right-2 md:right-[90px] bg-white shadow-xl 
+        className={`absolute w-[360px] h-[255px] rounded-lg top-24 z-50 ml-1 right-2 md:right-[90px] bg-white shadow-xl 
               ${cart === false && `hidden`}`}
       >
         <h2 className=" font-semibold border-b-2 py-5 mx-6">Cart</h2>

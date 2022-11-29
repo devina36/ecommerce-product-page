@@ -8,27 +8,27 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 function SampleNextArrow(props) {
   const { onClick } = props;
   return (
-    <button
+    <div
       className=" cursor-pointer flex justify-center items-center z-30 shadow-sm -right-5 md:-right-7 bg-white md:w-14 md:h-14 w-10 h-10
       absolute rounded-full opacity-100 md:top-[40%] md:-translate-y-[60%] top-[50%] -translate-y-[50%] group"
       onClick={onClick}
     >
       <MdKeyboardArrowRight size={30} className="text-very-dark-blue group-hover:text-oranges" />
-    </button>
+    </div>
   );
 }
 
 function SamplePrevArrow(props) {
   const { onClick } = props;
   return (
-    <button
+    <div
       className="
       cursor-pointer flex justify-center items-center shadow-sm z-30 -left-5 md:-left-7 bg-white md:w-14 md:h-14 w-10 h-10
       absolute rounded-full opacity-100 md:top-[40%] top-[50%] -translate-y-[50%] md:-translate-y-[60%] group"
       onClick={onClick}
     >
       <MdKeyboardArrowLeft size={30} className=" text-very-dark-blue group-hover:text-oranges" />
-    </button>
+    </div>
   );
 }
 

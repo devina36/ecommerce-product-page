@@ -11,26 +11,26 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 function SampleNextArrow(props) {
   const { onClick } = props;
   return (
-    <button
+    <div
       className=" cursor-pointer flex justify-center items-center z-30 shadow-sm right-4 bg-white w-10 h-10
       absolute rounded-full opacity-100 top-1/2 -translate-y-1/2 md:hidden group"
       onClick={onClick}
     >
       <MdKeyboardArrowRight size={30} className="text-very-dark-blue group-hover:text-oranges" />
-    </button>
+    </div>
   );
 }
 
 function SamplePrevArrow(props) {
   const { onClick } = props;
   return (
-    <button
+    <div
       className=" cursor-pointer flex justify-center items-center z-30 shadow-sm left-4 bg-white w-10 h-10
       absolute rounded-full opacity-100 top-1/2 -translate-y-1/2 md:hidden group"
       onClick={onClick}
     >
       <MdKeyboardArrowLeft size={30} className="text-very-dark-blue group-hover:text-oranges" />
-    </button>
+    </div>
   );
 }
 
@@ -72,22 +72,22 @@ const CarouselProduct = () => {
     <>
       <Slider {...settings} className="w-full md:rounded-2xl max-w-[450px]">
         <div>
-          <span onClick={handleOpen} className="w-full overflow-hidden">
+          <span onClick={handleOpen} className="w-full overflow-hidden cursor-zoom-in">
             <img src={Product1} className="object-cover w-full md:rounded-2xl h-[300px] md:h-auto" alt="product1" />
           </span>
         </div>
         <div>
-          <span onClick={handleOpen} className="w-full overflow-hidden">
+          <span onClick={handleOpen} className="w-full overflow-hidden cursor-zoom-in">
             <img src={Product2} className="object-cover w-full md:rounded-2xl h-[300px] md:h-auto" alt="product2" />
           </span>
         </div>
         <div>
-          <span onClick={handleOpen} className="w-full overflow-hidden">
+          <span onClick={handleOpen} className="w-full overflow-hidden cursor-zoom-in">
             <img src={Product3} className="object-cover w-full md:rounded-2xl h-[300px] md:h-auto" alt="product3" />
           </span>
         </div>
         <div>
-          <span onClick={handleOpen} className="w-full overflow-hidden">
+          <span onClick={handleOpen} className="w-full overflow-hidden cursor-zoom-in">
             <img src={Product4} className="object-cover w-full md:rounded-2xl h-[300px] md:h-auto" alt="product4" />
           </span>
         </div>

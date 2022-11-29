@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BsCart2 } from 'react-icons/bs';
-import { TiPlus, TiMinus } from 'react-icons/ti';
+import { FaPlus, FaMinus } from 'react-icons/fa';
 
 const Count = () => {
   const [count, setCount] = useState(0);
@@ -22,19 +22,15 @@ const Count = () => {
       <div className="flex flex-col md:flex-row gap-4 w-full">
         <div className="relative w-full md:max-w-[156px] flex justify-center items-center bg-light-grayish-blue rounded-xl">
           <button
-            className=" absolute text-oranges px-5 md:px-3 h-full top-0 left-0 rounded-l-lg disabled:hover:opacity-100 hover:opacity-60"
+            className="absolute px-5 md:px-3 h-full top-0 left-0 rounded-l-lg disabled:hover:opacity-100 hover:opacity-60"
             disabled={count === 0 || (count < 0 && true)}
             onClick={minus}
           >
-            <TiMinus size={20} />
+            <FaMinus size={16} className="text-oranges" />
           </button>
           <span className="font-bold py-4">{count}</span>
-          <button
-            className=" 
-            absolute text-oranges px-5 md:px-3 h-full top-0 right-0 rounded-r-lg hover:opacity-60"
-            onClick={plus}
-          >
-            <TiPlus size={17} />
+          <button className="absolute px-5 md:px-3 h-full top-0 right-0 rounded-r-lg hover:opacity-60" onClick={plus}>
+            <FaPlus size={16} className="text-oranges" />
           </button>
         </div>
         <button
