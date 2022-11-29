@@ -26,15 +26,11 @@ const Count = () => {
             disabled={count === 0 || (count < 0 && true)}
             onClick={minus}
           >
-            <span>
-              <FaMinus size={16} className="text-oranges" />
-            </span>
+            <FaMinus size={16} className="text-oranges" aria-label="Minus" />
           </button>
           <span className="font-bold py-4">{count}</span>
           <button className="absolute px-5 md:px-3 h-full top-0 right-0 rounded-r-lg hover:opacity-60" onClick={plus}>
-            <span>
-              <FaPlus size={16} className="text-oranges" />
-            </span>
+            <FaPlus size={16} className="text-oranges" aria-label="Plus" />
           </button>
         </div>
         <button

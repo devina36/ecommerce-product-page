@@ -11,26 +11,26 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
 function SampleNextArrow(props) {
   const { onClick } = props;
   return (
-    <div
+    <button
       className=" cursor-pointer flex justify-center items-center z-30 shadow-sm right-4 bg-white w-10 h-10
       absolute rounded-full opacity-100 top-1/2 -translate-y-1/2 md:hidden group"
       onClick={onClick}
     >
-      <MdKeyboardArrowRight size={30} className="text-very-dark-blue group-hover:text-oranges" />
-    </div>
+      <MdKeyboardArrowRight size={30} className="text-very-dark-blue group-hover:text-oranges" aria-label="Next" />
+    </button>
   );
 }
 
 function SamplePrevArrow(props) {
   const { onClick } = props;
   return (
-    <div
+    <button
       className=" cursor-pointer flex justify-center items-center z-30 shadow-sm left-4 bg-white w-10 h-10
       absolute rounded-full opacity-100 top-1/2 -translate-y-1/2 md:hidden group"
       onClick={onClick}
     >
-      <MdKeyboardArrowLeft size={30} className="text-very-dark-blue group-hover:text-oranges" />
-    </div>
+      <MdKeyboardArrowLeft size={30} className="text-very-dark-blue group-hover:text-oranges" aria-label="Prev" />
+    </button>
   );
 }
 
